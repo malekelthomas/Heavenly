@@ -156,52 +156,6 @@ func getCake(w http.ResponseWriter, r *http.Request) {
 	findCakeByType(cakeType)
 }
 
-/* func createEvent(w http.ResponseWriter, r *http.Request) {
-	var newEvent event
-	reqBody, err := ioutil.ReadAll(r.Body)
-	if err != nil {
-		fmt.Fprintf(w, "Enter data with event title and description only")
-	}
-
-	json.Unmarshal(reqBody, &newEvent)
-	events = append(events, newEvent)
-	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(newEvent)
-}
-
-func getEvent(w http.ResponseWriter, r *http.Request) {
-	eventID := mux.Vars(r)["id"]
-	reqBody, err := ioutil.ReadAll(r.Body)
-	var updatedEvent event
-	if err != nil {
-		fmt.Fprintf(w, "Enter data with event title and description only")
-	}
-	json.Unmarshal(reqBody, &updatedEvent)
-
-	for i, event := range events {
-		if event.ID == eventID {
-			event.Title = updatedEvent.Title
-			event.Description = updatedEvent.Description
-			events = append(events[:i], event)
-			json.NewEncoder(w).Encode(event)
-		}
-	}
-}
-
-func getAllEvents(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(events)
-}
-
-func updateEvent(w http.ResponseWriter, r *http.Request) {
-	eventID := mux.Vars(r)["id"]
-
-	for _, event := range events {
-		if event.ID == eventID {
-
-		}
-	}
-} */
-
 func homeLink(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Welcome home!")
 }
